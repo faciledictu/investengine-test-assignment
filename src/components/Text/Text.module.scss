@@ -1,0 +1,13 @@
+@import '@/styles/variables';
+
+@each $name, $size in $font-sizes {
+  .font-size-#{$name} {
+    font-size: #{$size};
+  }
+}
+
+.heading {
+    font-weight: var(--headings-font-weight);
+    font-family: var(--headings-font-family);
+    letter-spacing: var(--headings-letter-spacing);
+}

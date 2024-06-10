@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+  padding-right: 16px;
+  padding-left: 16px;
+}

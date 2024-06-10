@@ -1,0 +1,21 @@
+$base-font-size: 16px;
+$base-line-heigh: 1.5;
+$base-font-family: "SF Pro", sans-serif;
+$headings-font-family: "Poppins", sans-serif;
+$headings-font-weight: 600;
+$headings-letter-spacing: 0.5%;
+$colors: (
+  "primary": #3B3BF5,
+  "pink": #FE3D9A,
+  "body": #000,
+  "body-inverted": #FFF,
+  "bg": #FFF
+);
+$font-sizes: (
+  "48": 48px,
+  "32": 32px,
+  "24": 24px,
+  "18": 18px,
+  '16': 16px,
+);
+$breakpoint-desktop: 768px;

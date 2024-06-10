@@ -1,0 +1,41 @@
+@import 'normalize.css/normalize';
+@import 'https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap';
+@import '@/styles/variables';
+
+@mixin generate-colors($color-map) {
+  @each $name, $color in $color-map {
+    --color-#{$name}: #{$color};
+  }
+}
+
+:root {
+  @include generate-colors($colors);
+
+  --headings-font-family: #{$headings-font-family};
+  --headings-letter-spacing: #{$headings-letter-spacing};
+  --headings-font-weight: #{$headings-font-weight};
+
+  font-size: #{$base-font-size};
+  font-family: #{$base-font-family};
+  line-height: #{$base-line-heigh};
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  display: flex;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  place-items: center;
+}
+
+body {
+  margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}

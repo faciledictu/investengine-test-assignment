@@ -1,0 +1,82 @@
+@import '@/styles/variables';
+
+.wrapper {
+  all: unset;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-flow: nowrap column;
+  gap: #{$base-font-size};
+  padding: 32px 32px 40px;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  box-shadow: 0 var(--shadow-shift) 60px var(--shadow-color);
+ 
+  --icon-size: 132px;
+  --icon-margins: 12px;
+  --shadow-shift: 15px;
+  --shadow-color: rgb(from var(--color-body) r g b / 15%);
+  --card-radius: 8px;
+}
+
+
+.wrapper.hoverable:not(:disabled) {
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+
+.wrapper.hoverable:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.primary {
+  color: var(--color-body-inverted);
+  background-color: var(--color-primary);
+
+  --shadow-color: rgb(from var(--color-primary) r g b / 35%);
+}
+
+.pink {
+  color: var(--color-body-inverted);
+  background-color: var(--color-pink);
+
+  --shadow-color: rgb(from var(--color-pink) r g b / 35%);
+}
+
+.with-stripe {
+  color: var(--color-body);
+  background-color: var(--color-bg);
+
+  --shadow-shift: 5px;
+  --shadow-color: rgb(0 51 126 / 12%);
+}
+
+.with-stripe::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.5rem;
+  height: 100%;
+  background-color: var(--color-primary);
+  content: '';
+}
+
+.icon {
+  position: absolute;
+  right: var(--icon-margins);
+  bottom: var(--icon-margins);
+  width: var(--icon-size);
+  max-width: 50%;
+}
+
+.with-icon .card-body {
+  width: 66%;
+  max-width: calc(100% - var(--icon-size) + var(--icon-margins));
+  min-height: calc(var(--icon-size) + var(--icon-margins) - #{$base-line-heigh} * #{$base-font-size} - 40px);
+}
+
+@media (width >= #{$breakpoint-desktop}) {
+  .wrapper {
+    --card-radius: 12px;
+ }
+}
